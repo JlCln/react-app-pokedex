@@ -3,16 +3,17 @@ import { useState } from "react";
 
 import PokemonCard from "./components/PokemonCard";
 
+import NavBar from "./components/NavBar";
+
+
+
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
   return (
     <div className="App">
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      <p style={{ color: "#eb7880", fontWeight: "bold", textDecoration: "underline" }}>Using states</p>
-      <div>
-        <button onClick={() => setPokemonIndex(pokemonIndex - 1)} style={{ visibility: pokemonIndex === 0 ? "hidden" : "visible" }}>Précédent</button>
-        <button onClick={() => setPokemonIndex(pokemonIndex + 1)} style={{ visibility: pokemonIndex === pokemonList.length - 1 ? "hidden" : "visible" }} >Suivant</button>
-      </div>
+      <p style={{ color: "#eb7880", fontWeight: "bold", textDecoration: "underline" }}>Using floating states</p>
+      <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList={pokemonList}/>
       </div>
   );
 }
