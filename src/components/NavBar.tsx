@@ -10,13 +10,18 @@ interface NavBarProps {
   }
 
   
-  function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }: NavBarProps) {
-    const pokemon = pokemonList[pokemonIndex];
-    if (!pokemon) return null;
+  function NavBar({ setPokemonIndex, pokemonList }: NavBarProps) {
+
+
     return (
-      <div className="NavBar">
+      <div>
         {pokemonList.map((pokemon, index) => (
-          <button key={index} onClick={() => setPokemonIndex(index)}>
+          <button key={index} onClick={() => {
+            setPokemonIndex(index);
+            if (pokemon.name.toLowerCase().includes("pikachu")) {
+              alert("Pika-pii~!! ⚡");
+            }
+          }}>
             {pokemon.name}
           </button>
         ))}
