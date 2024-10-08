@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
-      <p style={{ color: "#eb7880", fontWeight: "bold", textDecoration: "underline" }}>Using floating states</p>
+      <p style={{ color: "cyan", fontWeight: "bold", textDecoration: "underline" }}>Using map function</p>
       <NavBar pokemonIndex={pokemonIndex} setPokemonIndex={setPokemonIndex} pokemonList={pokemonList}/>
       </div>
   );
